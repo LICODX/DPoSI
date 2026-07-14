@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "chain_id": "dposi-mainnet-1",
+  "max_nodes_per_cycle": 100,
+  "blocks_per_node": 10,
+  "block_time_ms": 3000,
+  "total_supply": "1000000000000000000",
+  "initial_balances": {
+    "node-1": "100000000000000000",
+    "node-2": "100000000000000000",
+    "node-3": "100000000000000000"
+  },
+  "consensus": {
+    "speed_test_interval_blocks": 10,
+    "slash_threshold": 30.0,
+    "offline_threshold": 3,
+    "minimum_stake": 10000,
+    "undelegation_period_blocks": 100000
+  },
+  "genesis_time": "2024-01-01T00:00:00Z",
+  "initial_validators": [
+    {
+      "node_id": "node-1",
+      "address": "127.0.0.1:8000",
+      "stake": 100000,
+      "region": "AS"
+    },
+    {
+      "node_id": "node-2",
+      "address": "127.0.0.1:8001",
+      "stake": 100000,
+      "region": "EU"
+    },
+    {
+      "node_id": "node-3",
+      "address": "127.0.0.1:8002",
+      "stake": 100000,
+      "region": "NA"
+    }
+  ]
+}
