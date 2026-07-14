@@ -1,0 +1,51 @@
+# DPoSI Node Configuration
+
+# Node Identity
+[node]
+node_id = "node-1"
+address = "127.0.0.1:8000"
+public_key = ""
+private_key = ""
+stake_amount = 100000  # Stake dalam satuan token terkecil
+region = "AS"          # Geographic region untuk handicap
+
+# Networking
+[network]
+p2p_port = 30333
+max_peers = 100
+boot_nodes = [
+    "/ip4/127.0.0.1/tcp/30333/p2p/QmBootNode1",
+    "/ip4/127.0.0.1/tcp/30334/p2p/QmBootNode2"
+]
+
+# Consensus
+[consensus]
+max_nodes_per_cycle = 100
+blocks_per_node = 10
+block_time_ms = 3000           # 3 detik
+speed_test_interval_blocks = 10 # Test setiap 10 blok
+slash_threshold = 30.0         # Score < 30 -> slash
+offline_threshold = 3          # Offline > 3x -> slash
+
+# Staking
+[staking]
+minimum_stake = 10000
+maximum_slashing = 1000
+undelegation_period_blocks = 100000  # ~33 hari dengan block_time 3s
+
+# Speed Testing
+[speed_test]
+test_timeout_seconds = 10
+test_data_size_kb = 100
+verifier_count = 3
+verify_threshold = 0.8  # 80% verifier harus approve
+
+# Storage
+[storage]
+db_path = "./data/badger"
+prune_interval_blocks = 100000
+
+# Logging
+[logging]
+level = "info"  # debug, info, warn, error
+format = "json" # json atau text
